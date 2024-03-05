@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Number Generator</title>
+</head>
+<body>
+
+<button onclick="generaterandomnumber()" 
+style="background-color: purple;
+border: dashed 2px;
+color: rgb(255, 190, 235);
+padding: 15px 30px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 20px;">Generate Random Number</button></button>
+<p id="shownumber"></p>
+<p id="showbreakdown"></p>
+<p id="showdate"></p>
+
+<script>
+function generaterandomnumber() {
+    let randomnumber = Math.floor(Math.random() * 1001);
+
+    document.getElementById("shownumber").innerText = "Randomly Generated Number: " + randomnumber;
+
+    
+    let hundreds = Math.floor(randomnumber / 100);
+    let tens = Math.floor((randomnumber % 100) / 10);
+    let ones = randomnumber % 10;
+
+    let hundreds1 = Math.floor(hundreds*100);
+    let tens1 = Math.floor(tens*10);
+
+    let breakdown = "Breakdown: " + hundreds1 + " " + tens1 + " " + ones;
+    document.getElementById("showbreakdown").innerText = breakdown;
+
+    var d= new Date()
+    document.getElementById("showdate").innerText = "Generated on " + d;
+}
+</script>
+
+</body>
+</html>
